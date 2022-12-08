@@ -1,0 +1,1175 @@
+Analysis & Synthesis report for Top_Level
+Mon Dec  5 14:06:21 2022
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "lcd_timing_controller:u5"
+ 14. Port Connectivity Checks: "adc_spi_controller:u2"
+ 15. Port Connectivity Checks: "Reset_delay:u0"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Dec  5 14:06:21 2022       ;
+; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                   ; Top_Level                                   ;
+; Top-level Entity Name           ; project                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 252                                         ;
+; Total pins                      ; 142                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; project            ; Top_Level          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Optimization Technique                                                          ; Area               ; Balanced           ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; project.vhd                      ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd                    ;         ;
+; touch_irq_detector.vhd           ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/touch_irq_detector.vhd         ;         ;
+; three_wire_controller.vhd        ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/three_wire_controller.vhd      ;         ;
+; Reset_delay.vhd                  ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/Reset_delay.vhd                ;         ;
+; lcd_spi_controller.vhd           ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd         ;         ;
+; adc_spi_controller.vhd           ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/adc_spi_controller.vhd         ;         ;
+; Sevenseg.vhd                     ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/Sevenseg.vhd                   ;         ;
+; counter.vhd                      ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/counter.vhd                    ;         ;
+; lcd_timing_controller_test.vhd   ; yes             ; User VHDL File  ; C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Estimate of Logic utilization (ALMs needed) ; 214                   ;
+;                                             ;                       ;
+; Combinational ALUT usage for logic          ; 380                   ;
+;     -- 7 input functions                    ; 0                     ;
+;     -- 6 input functions                    ; 41                    ;
+;     -- 5 input functions                    ; 38                    ;
+;     -- 4 input functions                    ; 64                    ;
+;     -- <=3 input functions                  ; 237                   ;
+;                                             ;                       ;
+; Dedicated logic registers                   ; 252                   ;
+;                                             ;                       ;
+; I/O pins                                    ; 142                   ;
+;                                             ;                       ;
+; Total DSP Blocks                            ; 0                     ;
+;                                             ;                       ;
+; Maximum fan-out node                        ; Reset_delay:u0|oRST_0 ;
+; Maximum fan-out                             ; 180                   ;
+; Total fan-out                               ; 2418                  ;
+; Average fan-out                             ; 2.45                  ;
++---------------------------------------------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                        ;
++----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                             ; Entity Name           ; Library Name ;
++----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------+--------------+
+; |project                                                 ; 380 (2)             ; 252 (1)                   ; 0                 ; 0          ; 142  ; 0            ; |project                                                                        ; project               ; work         ;
+;    |Reset_delay:u0|                                      ; 44 (44)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |project|Reset_delay:u0                                                         ; Reset_delay           ; work         ;
+;    |Sevenseg:u6|                                         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |project|Sevenseg:u6                                                            ; Sevenseg              ; work         ;
+;    |Sevenseg:u7|                                         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |project|Sevenseg:u7                                                            ; Sevenseg              ; work         ;
+;    |adc_spi_controller:u2|                               ; 54 (54)             ; 79 (79)                   ; 0                 ; 0          ; 0    ; 0            ; |project|adc_spi_controller:u2                                                  ; adc_spi_controller    ; work         ;
+;    |counter:u4|                                          ; 43 (43)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |project|counter:u4                                                             ; counter               ; work         ;
+;    |lcd_spi_controller:u1|                               ; 104 (64)            ; 80 (53)                   ; 0                 ; 0          ; 0    ; 0            ; |project|lcd_spi_controller:u1                                                  ; lcd_spi_controller    ; work         ;
+;       |three_wire_controller:three_wire_controller_inst| ; 40 (40)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |project|lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst ; three_wire_controller ; work         ;
+;    |lcd_timing_controller:u5|                            ; 118 (118)           ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |project|lcd_timing_controller:u5                                               ; lcd_timing_controller ; work         ;
+;    |touch_irq_detector:u3|                               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |project|touch_irq_detector:u3                                                  ; touch_irq_detector    ; work         ;
++----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                  ;
++-----------------------------------------------------+-----------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal   ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------+------------------------+
+; lcd_timing_controller:u5|blue_1[3]                  ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|blue_1[2]                  ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|blue_1[1]                  ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|blue_1[0]                  ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|blue_1[4]                  ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|blue_1[5]                  ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|blue_1[6]                  ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|blue_1[7]                  ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|green_1[0]                 ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|green_1[1]                 ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|green_1[2]                 ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|green_1[3]                 ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|green_1[4]                 ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|green_1[5]                 ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|green_1[6]                 ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|green_1[7]                 ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[0]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[2]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[1]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[1]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[0]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[9]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[8]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[7]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[6]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[5]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[4]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|mx_coordinate[3]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[8]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[7]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[6]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[5]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[4]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[3]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; lcd_timing_controller:u5|my_coordinate[2]           ; Reset_delay:u0|oRST_2 ; yes                    ;
+; Number of user-specified and inferred latches = 35  ;                       ;                        ;
++-----------------------------------------------------+-----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                             ;
++----------------------------------------------+-------------------------------------------------+
+; Register name                                ; Reason for Removal                              ;
++----------------------------------------------+-------------------------------------------------+
+; lcd_spi_controller:u1|m3wire_data[9]         ; Stuck at GND due to stuck port data_in          ;
+; touch_irq_detector:u3|touch_en               ; Merged with counter:u4|touch_en                 ;
+; touch_irq_detector:u3|touch_en_clr           ; Merged with counter:u4|touch_en_clr             ;
+; touch_irq_detector:u3|touch_delay_cnt[24]    ; Merged with counter:u4|touch_delay_cnt[24]      ;
+; touch_irq_detector:u3|touch_delay_cnt[23]    ; Merged with counter:u4|touch_delay_cnt[23]      ;
+; touch_irq_detector:u3|touch_delay_cnt[22]    ; Merged with counter:u4|touch_delay_cnt[22]      ;
+; touch_irq_detector:u3|touch_delay_cnt[21]    ; Merged with counter:u4|touch_delay_cnt[21]      ;
+; touch_irq_detector:u3|touch_delay_cnt[20]    ; Merged with counter:u4|touch_delay_cnt[20]      ;
+; touch_irq_detector:u3|touch_delay_cnt[19]    ; Merged with counter:u4|touch_delay_cnt[19]      ;
+; touch_irq_detector:u3|touch_delay_cnt[18]    ; Merged with counter:u4|touch_delay_cnt[18]      ;
+; touch_irq_detector:u3|touch_delay_cnt[17]    ; Merged with counter:u4|touch_delay_cnt[17]      ;
+; touch_irq_detector:u3|touch_delay_cnt[16]    ; Merged with counter:u4|touch_delay_cnt[16]      ;
+; touch_irq_detector:u3|touch_delay_cnt[15]    ; Merged with counter:u4|touch_delay_cnt[15]      ;
+; touch_irq_detector:u3|touch_delay_cnt[14]    ; Merged with counter:u4|touch_delay_cnt[14]      ;
+; touch_irq_detector:u3|touch_delay_cnt[13]    ; Merged with counter:u4|touch_delay_cnt[13]      ;
+; touch_irq_detector:u3|touch_delay_cnt[12]    ; Merged with counter:u4|touch_delay_cnt[12]      ;
+; touch_irq_detector:u3|touch_delay_cnt[11]    ; Merged with counter:u4|touch_delay_cnt[11]      ;
+; touch_irq_detector:u3|touch_delay_cnt[10]    ; Merged with counter:u4|touch_delay_cnt[10]      ;
+; touch_irq_detector:u3|touch_delay_cnt[9]     ; Merged with counter:u4|touch_delay_cnt[9]       ;
+; touch_irq_detector:u3|touch_delay_cnt[8]     ; Merged with counter:u4|touch_delay_cnt[8]       ;
+; touch_irq_detector:u3|touch_delay_cnt[7]     ; Merged with counter:u4|touch_delay_cnt[7]       ;
+; touch_irq_detector:u3|touch_delay_cnt[6]     ; Merged with counter:u4|touch_delay_cnt[6]       ;
+; touch_irq_detector:u3|touch_delay_cnt[5]     ; Merged with counter:u4|touch_delay_cnt[5]       ;
+; touch_irq_detector:u3|touch_delay_cnt[4]     ; Merged with counter:u4|touch_delay_cnt[4]       ;
+; touch_irq_detector:u3|touch_delay_cnt[3]     ; Merged with counter:u4|touch_delay_cnt[3]       ;
+; touch_irq_detector:u3|touch_delay_cnt[2]     ; Merged with counter:u4|touch_delay_cnt[2]       ;
+; touch_irq_detector:u3|touch_delay_cnt[1]     ; Merged with counter:u4|touch_delay_cnt[1]       ;
+; touch_irq_detector:u3|touch_delay_cnt[0]     ; Merged with counter:u4|touch_delay_cnt[0]       ;
+; lcd_spi_controller:u1|msetup_st[3..9,11..30] ; Merged with lcd_spi_controller:u1|msetup_st[10] ;
+; div[1..31]                                   ; Lost fanout                                     ;
+; adc_spi_controller:u2|mdata_in[0]            ; Stuck at GND due to stuck port data_in          ;
+; lcd_spi_controller:u1|msetup_st[10]          ; Stuck at GND due to stuck port data_in          ;
+; touch_irq_detector:u3|mDISPLAY_MODE[0]       ; Merged with counter:u4|count[0]                 ;
+; touch_irq_detector:u3|mDISPLAY_MODE[1]       ; Merged with counter:u4|count[1]                 ;
+; Total Number of Removed Registers = 90       ;                                                 ;
++----------------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 252   ;
+; Number of registers using Synchronous Clear  ; 78    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 235   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 151   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                          ;
++-----------------------------------------------------------------------------+---------+
+; Inverted Register                                                           ; Fan out ;
++-----------------------------------------------------------------------------+---------+
+; lcd_timing_controller:u5|mvd                                                ; 1       ;
+; lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSEN ; 2       ;
+; Total number of inverted registers = 2                                      ;         ;
++-----------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; 3:1                ; 25 bits   ; 50 LEs        ; 0 LEs                ; 50 LEs                 ; Yes        ; |project|counter:u4|touch_delay_cnt[2]                                                 ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|adc_spi_controller:u2|mdata_in[7]                                             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |project|adc_spi_controller:u2|dclk_cnt[8]                                             ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |project|lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mST[4] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_timing_controller:u5"                                                                                   ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; ocount0 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; ocount1 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adc_spi_controller:u2"                                                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; oadc_cs ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Reset_delay:u0"                                                                       ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; orst_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 252                         ;
+;     CLR               ; 32                          ;
+;     CLR SCLR          ; 68                          ;
+;     ENA               ; 16                          ;
+;     ENA CLR           ; 125                         ;
+;     ENA CLR SCLR      ; 10                          ;
+;     plain             ; 1                           ;
+; arriav_io_obuf        ; 72                          ;
+; arriav_lcell_comb     ; 384                         ;
+;     arith             ; 180                         ;
+;         1 data inputs ; 176                         ;
+;         2 data inputs ; 4                           ;
+;     normal            ; 204                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 33                          ;
+;         4 data inputs ; 64                          ;
+;         5 data inputs ; 38                          ;
+;         6 data inputs ; 41                          ;
+; boundary_port         ; 142                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.10                        ;
+; Average LUT depth     ; 2.90                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Mon Dec  5 14:06:11 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Top_Level -c Top_Level
+Info (16303): Aggressive Area optimization mode selected -- logic area will be prioritized at the potential cost of reduced timing performance
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file project.vhd
+    Info (12022): Found design unit 1: project-Top_Level File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 33
+    Info (12023): Found entity 1: project File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file touch_irq_detector.vhd
+    Info (12022): Found design unit 1: touch_irq_detector-IRQ_Detect File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/touch_irq_detector.vhd Line: 19
+    Info (12023): Found entity 1: touch_irq_detector File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/touch_irq_detector.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file three_wire_controller.vhd
+    Info (12022): Found design unit 1: three_wire_controller-Three_Cont File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/three_wire_controller.vhd Line: 22
+    Info (12023): Found entity 1: three_wire_controller File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/three_wire_controller.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file reset_delay.vhd
+    Info (12022): Found design unit 1: Reset_delay-RDEL File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/Reset_delay.vhd Line: 13
+    Info (12023): Found entity 1: Reset_delay File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/Reset_delay.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_spi_controller.vhd
+    Info (12022): Found design unit 1: lcd_spi_controller-SPI_Contrl File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 18
+    Info (12023): Found entity 1: lcd_spi_controller File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file adc_spi_controller.vhd
+    Info (12022): Found design unit 1: adc_spi_controller-ADC_SPI_Contrl File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/adc_spi_controller.vhd Line: 24
+    Info (12023): Found entity 1: adc_spi_controller File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/adc_spi_controller.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file sevenseg.vhd
+    Info (12022): Found design unit 1: Sevenseg-Behavioral File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/Sevenseg.vhd Line: 11
+    Info (12023): Found entity 1: Sevenseg File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/Sevenseg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: counter-arch File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/counter.vhd Line: 17
+    Info (12023): Found entity 1: counter File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/counter.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_timing_controller_test.vhd
+    Info (12022): Found design unit 1: lcd_timing_controller-LCD_Tim File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 34
+    Info (12023): Found entity 1: lcd_timing_controller File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 9
+Info (12127): Elaborating entity "project" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at project.vhd(134): object "DLY_RST_1" assigned a value but never read File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 134
+Warning (10036): Verilog HDL or VHDL warning at project.vhd(155): object "adc_cs" assigned a value but never read File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 155
+Info (12128): Elaborating entity "Reset_delay" for hierarchy "Reset_delay:u0" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 184
+Info (12128): Elaborating entity "lcd_spi_controller" for hierarchy "lcd_spi_controller:u1" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 193
+Warning (10492): VHDL Process Statement warning at lcd_spi_controller.vhd(162): signal "v_reverse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at lcd_spi_controller.vhd(163): signal "h_reverse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 163
+Info (12128): Elaborating entity "three_wire_controller" for hierarchy "lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 65
+Info (12128): Elaborating entity "adc_spi_controller" for hierarchy "adc_spi_controller:u2" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 205
+Info (12128): Elaborating entity "touch_irq_detector" for hierarchy "touch_irq_detector:u3" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 219
+Info (12128): Elaborating entity "counter" for hierarchy "counter:u4" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 228
+Warning (10541): VHDL Signal Declaration warning at counter.vhd(12): used implicit default value for signal "oDisplay" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/counter.vhd Line: 12
+Info (12128): Elaborating entity "lcd_timing_controller" for hierarchy "lcd_timing_controller:u5" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 237
+Warning (10541): VHDL Signal Declaration warning at lcd_timing_controller_test.vhd(27): used implicit default value for signal "oCount0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at lcd_timing_controller_test.vhd(28): used implicit default value for signal "oCount1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at lcd_timing_controller_test.vhd(46): object "mden" assigned a value but never read File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 46
+Warning (10036): Verilog HDL or VHDL warning at lcd_timing_controller_test.vhd(56): object "graycnt1" assigned a value but never read File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 56
+Warning (10036): Verilog HDL or VHDL warning at lcd_timing_controller_test.vhd(57): object "pattern_data" assigned a value but never read File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(172): signal "mselx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(184): signal "iY_COORD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 184
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(185): signal "iX_COORD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 185
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(189): signal "y_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 189
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(189): signal "my_coordinate" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 189
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(190): signal "x_cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(190): signal "mx_coordinate" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(192): signal "bmp_Pixel_Cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 192
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(193): signal "bmp_Pixel_Cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 193
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(198): signal "display_area" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 198
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(217): signal "mselx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 217
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(219): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 219
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(226): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 226
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(233): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(240): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 240
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(248): signal "mselx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 248
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(250): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 250
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(257): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 257
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(264): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 264
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(271): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 271
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(279): signal "mselx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 279
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(281): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 281
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(288): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 288
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(295): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 295
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(302): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 302
+Warning (10631): VHDL Process Statement warning at lcd_timing_controller_test.vhd(167): inferring latch(es) for signal or variable "bmp_Pixel_Cnt", which holds its previous value in one or more paths through the process File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Warning (10631): VHDL Process Statement warning at lcd_timing_controller_test.vhd(167): inferring latch(es) for signal or variable "my_coordinate", which holds its previous value in one or more paths through the process File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Warning (10631): VHDL Process Statement warning at lcd_timing_controller_test.vhd(167): inferring latch(es) for signal or variable "mx_coordinate", which holds its previous value in one or more paths through the process File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Warning (10631): VHDL Process Statement warning at lcd_timing_controller_test.vhd(167): inferring latch(es) for signal or variable "red_1", which holds its previous value in one or more paths through the process File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Warning (10631): VHDL Process Statement warning at lcd_timing_controller_test.vhd(167): inferring latch(es) for signal or variable "green_1", which holds its previous value in one or more paths through the process File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Warning (10631): VHDL Process Statement warning at lcd_timing_controller_test.vhd(167): inferring latch(es) for signal or variable "blue_1", which holds its previous value in one or more paths through the process File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(338): signal "mselx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 338
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(342): signal "mselx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 342
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(345): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 345
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(349): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 349
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(357): signal "mselx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 357
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(359): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 359
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(364): signal "msel" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 364
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(417): signal "mhd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 417
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(418): signal "mvd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 418
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(419): signal "display_area" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 419
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(420): signal "mred" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 420
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(421): signal "mgreen" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 421
+Warning (10492): VHDL Process Statement warning at lcd_timing_controller_test.vhd(422): signal "mblue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 422
+Warning (10873): Using initial value X (don't care) for net "led[9..2]" at lcd_timing_controller_test.vhd(23) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 23
+Info (10041): Inferred latch for "blue_1[0]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "blue_1[1]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "blue_1[2]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "blue_1[3]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "blue_1[4]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "blue_1[5]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "blue_1[6]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "blue_1[7]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "green_1[0]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "green_1[1]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "green_1[2]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "green_1[3]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "green_1[4]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "green_1[5]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "green_1[6]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "green_1[7]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "red_1[0]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "red_1[1]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "red_1[2]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "red_1[3]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "red_1[4]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "red_1[5]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "red_1[6]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "red_1[7]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[0]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[1]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[2]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[3]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[4]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[5]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[6]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[7]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[8]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "mx_coordinate[9]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[0]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[1]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[2]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[3]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[4]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[5]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[6]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[7]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "my_coordinate[8]" at lcd_timing_controller_test.vhd(167) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Info (10041): Inferred latch for "msel[0]" at lcd_timing_controller_test.vhd(152) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 152
+Info (10041): Inferred latch for "msel[1]" at lcd_timing_controller_test.vhd(152) File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 152
+Info (12128): Elaborating entity "Sevenseg" for hierarchy "Sevenseg:u6" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 255
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[4]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[5]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[6]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[7]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[8]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[9]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[10]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[11]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[12]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[13]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[14]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[15]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[16]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[17]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[18]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[19]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[20]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[21]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[22]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[23]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[24]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[25]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[26]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[27]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[28]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[29]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[30]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[31]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[32]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[33]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[34]" and its non-tri-state driver. File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[8]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[9]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[10]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[11]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[24]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[25]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[26]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[27]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[29]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[34]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+    Warning (13040): bidirectional pin "GPIO_1[35]" has no driver File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 29
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|SDA" to the node "lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mACK" into an OR gate File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/three_wire_controller.vhd Line: 18
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|green_1[7]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|green_1[6]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|green_1[5]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|green_1[4]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|green_1[3]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|green_1[2]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|green_1[1]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|green_1[0]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|blue_1[7]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|blue_1[6]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|blue_1[5]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|blue_1[4]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|blue_1[2]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|blue_1[1]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+    Info (13026): Duplicate LATCH primitive "lcd_timing_controller:u5|blue_1[0]" merged with LATCH primitive "lcd_timing_controller:u5|blue_1[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_timing_controller_test.vhd Line: 167
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_0[3]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[4]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[5]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[6]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[7]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[8]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[9]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[10]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[11]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[12]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[13]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[14]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[15]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[16]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[17]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[18]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[19]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[20]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[21]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[22]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[23]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[24]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[25]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[26]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[27]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[28]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[29]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[30]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[31]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[32]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[33]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+    Warning (13010): Node "GPIO_0[34]~synth" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 28
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 22
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 22
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 22
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 22
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 22
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 22
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 22
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 23
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 23
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 23
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 23
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 23
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 23
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 23
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 24
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 24
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 24
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 24
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 24
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 24
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 24
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 25
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 25
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 25
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 25
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 25
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 25
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 25
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 26
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 26
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 26
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 26
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 26
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 26
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 26
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 26
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register lcd_spi_controller:u1|lut_index[31] will power up to Low File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 79
+    Critical Warning (18010): Register lcd_spi_controller:u1|msetup_st[31] will power up to Low File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 79
+    Critical Warning (18010): Register lcd_spi_controller:u1|msetup_st[0] will power up to Low File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 79
+    Critical Warning (18010): Register lcd_spi_controller:u1|lut_index[0] will power up to Low File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/lcd_spi_controller.vhd Line: 79
+Info (17049): 31 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 392 assignments for entity "DE1_SOC_golden_top" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CONVST -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DIN -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DOUT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SCLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCDAT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCLRCK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_BCLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_DACDAT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_DACLRCK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_XCK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50 -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK4_50 -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50 -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FAN_CTRL -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_I2C_SCLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_I2C_SDAT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[10] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[11] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[12] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[13] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[14] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[15] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[16] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[17] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[18] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[19] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[20] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[21] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[22] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[23] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[24] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[25] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[26] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[27] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[28] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[29] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[30] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[31] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[32] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[33] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[34] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[35] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[8] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[9] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[10] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[11] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[12] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[13] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[14] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[15] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[16] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[17] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[18] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[19] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[20] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[21] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[22] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[23] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[24] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[25] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[26] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[27] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[28] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[29] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[30] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[31] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[32] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[33] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[34] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[35] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[8] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[9] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_CONV_USB_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[10] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[11] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[12] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[13] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[14] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[8] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[9] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CAS_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CKE -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_CK_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_CK_P -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CS_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[10] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[11] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[12] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[13] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[14] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[15] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[16] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[17] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[18] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[19] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[20] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[21] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[22] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[23] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[24] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[25] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[26] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[27] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[28] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[29] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[30] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[31] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[8] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[9] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ODT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_RAS_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_RESET_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_RZQ -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_WE_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_GTX_CLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_INT_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_MDC -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_MDIO -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_CLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DV -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_EN -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DCLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_NCSO -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_GSENSOR_INT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C1_SCLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C1_SDAT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C2_SCLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C2_SDAT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C_CONTROL -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_KEY -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_LED -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_LTC_GPIO -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_CLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_CMD -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_CLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_MISO -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_MOSI -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_SS -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_UART_RX -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_UART_TX -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_CLKOUT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DIR -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_NXT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_STP -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRDA_RXD -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRDA_TXD -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK2 -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT2 -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_CLK27 -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_HS -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_RESET_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_VS -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7] -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE1_SOC_golden_top was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE1_SOC_golden_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE1_SOC_golden_top -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_24" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 11
+    Warning (15610): No output dependent on input pin "CLOCK_27" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 12
+    Warning (15610): No output dependent on input pin "EXT_CLOCK" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 16
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Pradeep/FPGA_Project/Pradeep_TouchScreen/project.vhd Line: 18
+Info (21057): Implemented 570 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21060): Implemented 72 bidirectional pins
+    Info (21061): Implemented 428 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 617 warnings
+    Info: Peak virtual memory: 4881 megabytes
+    Info: Processing ended: Mon Dec  5 14:06:21 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
+
+

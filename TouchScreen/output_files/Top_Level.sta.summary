@@ -1,0 +1,293 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -5.524
+TNS   : -510.413
+
+Type  : Slow 1100mV 85C Model Setup 'Reset_delay:u0|oRST_2'
+Slack : -5.263
+TNS   : -75.795
+
+Type  : Slow 1100mV 85C Model Setup 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -4.417
+TNS   : -291.788
+
+Type  : Slow 1100mV 85C Model Setup 'div[0]'
+Slack : -2.979
+TNS   : -112.803
+
+Type  : Slow 1100mV 85C Model Hold 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 0.283
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.373
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'div[0]'
+Slack : 0.411
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'Reset_delay:u0|oRST_2'
+Slack : 0.721
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -4.999
+TNS   : -223.118
+
+Type  : Slow 1100mV 85C Model Recovery 'div[0]'
+Slack : -1.744
+TNS   : -69.863
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -1.676
+TNS   : -142.412
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.956
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'div[0]'
+Slack : 0.963
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 2.371
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.462
+TNS   : -111.202
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -0.394
+TNS   : -44.102
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'div[0]'
+Slack : -0.394
+TNS   : -21.182
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Reset_delay:u0|oRST_2'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -5.594
+TNS   : -486.577
+
+Type  : Slow 1100mV 0C Model Setup 'Reset_delay:u0|oRST_2'
+Slack : -5.344
+TNS   : -78.370
+
+Type  : Slow 1100mV 0C Model Setup 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -4.213
+TNS   : -276.157
+
+Type  : Slow 1100mV 0C Model Setup 'div[0]'
+Slack : -2.860
+TNS   : -108.083
+
+Type  : Slow 1100mV 0C Model Hold 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 0.293
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.380
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'div[0]'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'Reset_delay:u0|oRST_2'
+Slack : 0.634
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -5.050
+TNS   : -228.723
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -1.813
+TNS   : -131.492
+
+Type  : Slow 1100mV 0C Model Recovery 'div[0]'
+Slack : -1.692
+TNS   : -68.052
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.896
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'div[0]'
+Slack : 0.945
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 2.471
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.497
+TNS   : -119.328
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -0.394
+TNS   : -43.012
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'div[0]'
+Slack : -0.394
+TNS   : -21.139
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Reset_delay:u0|oRST_2'
+Slack : 0.214
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -3.282
+TNS   : -216.110
+
+Type  : Fast 1100mV 85C Model Setup 'Reset_delay:u0|oRST_2'
+Slack : -2.460
+TNS   : -34.924
+
+Type  : Fast 1100mV 85C Model Setup 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -2.233
+TNS   : -147.440
+
+Type  : Fast 1100mV 85C Model Setup 'div[0]'
+Slack : -1.596
+TNS   : -58.593
+
+Type  : Fast 1100mV 85C Model Hold 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'div[0]'
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'Reset_delay:u0|oRST_2'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -2.821
+TNS   : -108.704
+
+Type  : Fast 1100mV 85C Model Recovery 'div[0]'
+Slack : -1.153
+TNS   : -46.207
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -0.764
+TNS   : -36.413
+
+Type  : Fast 1100mV 85C Model Removal 'div[0]'
+Slack : 0.546
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.548
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 1.127
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.500
+TNS   : -19.387
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 0.052
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'div[0]'
+Slack : 0.103
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Reset_delay:u0|oRST_2'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -2.857
+TNS   : -181.298
+
+Type  : Fast 1100mV 0C Model Setup 'Reset_delay:u0|oRST_2'
+Slack : -2.125
+TNS   : -34.664
+
+Type  : Fast 1100mV 0C Model Setup 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -1.963
+TNS   : -128.207
+
+Type  : Fast 1100mV 0C Model Setup 'div[0]'
+Slack : -1.375
+TNS   : -50.016
+
+Type  : Fast 1100mV 0C Model Hold 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 0.128
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'div[0]'
+Slack : 0.150
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'Reset_delay:u0|oRST_2'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : -2.681
+TNS   : -105.385
+
+Type  : Fast 1100mV 0C Model Recovery 'div[0]'
+Slack : -0.989
+TNS   : -39.583
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -0.719
+TNS   : -20.519
+
+Type  : Fast 1100mV 0C Model Removal 'div[0]'
+Slack : 0.457
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.496
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 1.119
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.503
+TNS   : -19.228
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'lcd_spi_controller:u1|three_wire_controller:three_wire_controller_inst|mSPI_CLK'
+Slack : 0.072
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'div[0]'
+Slack : 0.124
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Reset_delay:u0|oRST_2'
+Slack : 0.283
+TNS   : 0.000
+
+------------------------------------------------------------
