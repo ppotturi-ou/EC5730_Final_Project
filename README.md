@@ -8,7 +8,7 @@
  
 ## For our project, we proposed to develop 3 different Applications 
 1.	Chessboard Display
-2.	BMP Image Display 
+2.	BMP Image Display - 8 bit color pallet display and smiley images display
 3.	Coordinated Touch Tracker Display
 
 #### Rules:
