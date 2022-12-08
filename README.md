@@ -8,5 +8,22 @@
  
 ## For our project, we proposed to develop 3 different Applications 
 1.	Chessboard Display
-2.	BMP Image Display
+2.	BMP Image Display 
 3.	Coordinated Touch Tracker Display
+
+#### Rules:
+**Before commiting the code:**
+1. Make sure to get the lastest copy.
+2. Compile the code and ensure no compilation Errors and warnings are reported
+3. Warning can be ignored in somecases
+4. Common mistakes are commiting undesired files like Local changes for testing.
+
+**After commiting the code:**
+1. Make sure you haven't missed any files to commit.
+2. Common mistakes are forgeting to commit new files. So please check in Github server to see all the files are reflected properly.
+3. Update the Team.
+
+### Demo:
+1.	Chessboard Display
+2.	BMP Image Display: https://youtube.com/shorts/eayxq-o6rh4
+3.	Coordinated Touch Tracker Display: https://youtube.com/shorts/yyLpgQqyZ0s?feature=share
