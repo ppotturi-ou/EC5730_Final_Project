@@ -1,4 +1,4 @@
-# EC5730_Final_Project
+# EC5730_Final_Project FALL 2022
 
 ## Our Team from Oakland University(Michigan) has design and developed LCD Based application using 
  1. Altera DE1 SoC board (https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=836)
