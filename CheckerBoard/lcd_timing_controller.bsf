@@ -1,0 +1,135 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 272 256)
+	(text "lcd_timing_controller" (rect 5 0 85 12)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "iCLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "iCLK" (rect 21 27 42 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "iRST_n" (rect 0 0 31 12)(font "Arial" ))
+		(text "iRST_n" (rect 21 43 52 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "iDISPLAY_MODE[1..0]" (rect 0 0 97 12)(font "Arial" ))
+		(text "iDISPLAY_MODE[1..0]" (rect 21 59 118 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 256 32)
+		(output)
+		(text "oHD" (rect 0 0 18 12)(font "Arial" ))
+		(text "oHD" (rect 217 27 235 39)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32)(line_width 1))
+	)
+	(port
+		(pt 256 48)
+		(output)
+		(text "oVD" (rect 0 0 20 12)(font "Arial" ))
+		(text "oVD" (rect 215 43 235 55)(font "Arial" ))
+		(line (pt 256 48)(pt 240 48)(line_width 1))
+	)
+	(port
+		(pt 256 64)
+		(output)
+		(text "oDEN" (rect 0 0 25 12)(font "Arial" ))
+		(text "oDEN" (rect 210 59 235 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 1))
+	)
+	(port
+		(pt 256 80)
+		(output)
+		(text "oLCD_R[7..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "oLCD_R[7..0]" (rect 176 75 235 87)(font "Arial" ))
+		(line (pt 256 80)(pt 240 80)(line_width 3))
+	)
+	(port
+		(pt 256 96)
+		(output)
+		(text "oLCD_G[7..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "oLCD_G[7..0]" (rect 178 91 235 103)(font "Arial" ))
+		(line (pt 256 96)(pt 240 96)(line_width 3))
+	)
+	(port
+		(pt 256 112)
+		(output)
+		(text "oLCD_B[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "oLCD_B[7..0]" (rect 179 107 235 119)(font "Arial" ))
+		(line (pt 256 112)(pt 240 112)(line_width 3))
+	)
+	(port
+		(pt 256 128)
+		(output)
+		(text "led[9..0]" (rect 0 0 30 12)(font "Arial" ))
+		(text "led[9..0]" (rect 205 123 235 135)(font "Arial" ))
+		(line (pt 256 128)(pt 240 128)(line_width 3))
+	)
+	(port
+		(pt 256 144)
+		(output)
+		(text "odisplay3[0..6]" (rect 0 0 56 12)(font "Arial" ))
+		(text "odisplay3[0..6]" (rect 179 139 235 151)(font "Arial" ))
+		(line (pt 256 144)(pt 240 144)(line_width 3))
+	)
+	(port
+		(pt 256 160)
+		(output)
+		(text "odisplay4[0..6]" (rect 0 0 57 12)(font "Arial" ))
+		(text "odisplay4[0..6]" (rect 178 155 235 167)(font "Arial" ))
+		(line (pt 256 160)(pt 240 160)(line_width 3))
+	)
+	(port
+		(pt 256 176)
+		(output)
+		(text "odisplay5[0..6]" (rect 0 0 56 12)(font "Arial" ))
+		(text "odisplay5[0..6]" (rect 179 171 235 183)(font "Arial" ))
+		(line (pt 256 176)(pt 240 176)(line_width 3))
+	)
+	(port
+		(pt 256 192)
+		(output)
+		(text "oCount0[3..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "oCount0[3..0]" (rect 182 187 235 199)(font "Arial" ))
+		(line (pt 256 192)(pt 240 192)(line_width 3))
+	)
+	(port
+		(pt 256 208)
+		(output)
+		(text "oCount1[3..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "oCount1[3..0]" (rect 184 203 235 215)(font "Arial" ))
+		(line (pt 256 208)(pt 240 208)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 240 224)(line_width 1))
+	)
+)
